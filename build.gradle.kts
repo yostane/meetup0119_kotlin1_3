@@ -7,27 +7,27 @@ buildscript {
         classpath(kotlin("gradle-plugin", kotlinVer))
         classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVer")
     }
-} // added
+} // for serialization
 
-val kotlinVer: String by extra // added
+val kotlinVer: String by extra // for serialization
 
 plugins {
     kotlin("jvm") version "1.3.11"
 }
-apply(plugin = "kotlinx-serialization") // added
+apply(plugin = "kotlinx-serialization") // for serialization
 
 group = "org.yostane"
 version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    maven("https://kotlin.bintray.com/kotlinx") // added
+    maven("https://kotlin.bintray.com/kotlinx") // for serialization and coroutines
 }
 
 dependencies {
     compile(kotlin("stdlib-jdk8"))
-    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVer") // added
-    compile("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.1") // added
+    compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVer") // for serialization
+    compile("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.9.1") // for serialization
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.0") // added
     compile(kotlin("script-runtime"))
 }
@@ -38,6 +38,6 @@ tasks.withType<KotlinCompile> {
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
     freeCompilerArgs = listOf("-XXLanguage:+InlineClasses",
-        "-Xuse-experimental=kotlin.Experimental", // added
+        "-Xuse-experimental=kotlin.Experimental", // for serialization
         "-Xjvm-default=compatibility")
 }

@@ -12,5 +12,5 @@ fun startGame(): Int {
 
 fun main() {
    val lives = startGame()
-    println("Thou have $lives lives")
+    println("Thou have $lives 💖")
 }*/
