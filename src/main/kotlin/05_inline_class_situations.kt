@@ -9,7 +9,6 @@ inline class GilBag(val coins: Int) : IPrintType {
     fun canBuyPotion() = coins <= 100
 }
 
-
 fun main() {
     val gilBag = GilBag(42)
     val iPrintTypeHours: IPrintType = gilBag

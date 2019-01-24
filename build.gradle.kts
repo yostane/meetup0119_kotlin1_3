@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
     var kotlinVer: String by extra
-    kotlinVer = "1.3.11"
+    kotlinVer = "1.3.20"
     dependencies {
         classpath(kotlin("gradle-plugin", kotlinVer))
         classpath("org.jetbrains.kotlin:kotlin-serialization:$kotlinVer")
@@ -12,7 +12,7 @@ buildscript {
 val kotlinVer: String by extra // for serialization
 
 plugins {
-    kotlin("jvm") version "1.3.11"
+    kotlin("jvm") version "1.3.20"
 }
 apply(plugin = "kotlinx-serialization") // for serialization
 

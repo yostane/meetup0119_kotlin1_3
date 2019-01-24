@@ -5,7 +5,6 @@ data class Mail(val mail:String) {
     fun dns() = if(isValid()) mail.substringAfter("@") else ""
 }
 
-
 fun main() {
     val mail = Mail("ilove@apple.com")
     println("type: ${mail.javaClass.name} ${mail.mail}, valid ${mail.isValid()}, dns ${mail.dns()}")
